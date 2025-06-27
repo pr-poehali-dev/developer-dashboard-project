@@ -1,11 +1,21 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import ProfileHeader from "@/components/ProfileHeader";
+import UserDataSection from "@/components/UserDataSection";
+import DocumentsSection from "@/components/DocumentsSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
+    <div className="min-h-screen bg-gray-50 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="space-y-8">
+          {/* Заголовок профиля */}
+          <ProfileHeader />
+
+          {/* Управление данными пользователя */}
+          <UserDataSection />
+
+          {/* Управление документами */}
+          <DocumentsSection />
+        </div>
       </div>
     </div>
   );
