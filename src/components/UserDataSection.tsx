@@ -4,45 +4,57 @@ import Icon from "@/components/ui/icon";
 
 const UserDataSection = () => {
   const dataStats = [
-    { label: "Активные проекты", value: 12, total: 20, color: "bg-primary" },
+    { label: "Активные объекты", value: 5, total: 8, color: "bg-primary" },
     {
-      label: "Завершенные задачи",
-      value: 147,
+      label: "Заключенные договоры",
+      value: 142,
       total: 200,
       color: "bg-green-500",
     },
     {
-      label: "Использование хранилища",
-      value: 7.2,
-      total: 10,
+      label: "Готовность проектов",
+      value: 68,
+      total: 100,
       color: "bg-orange-500",
-      unit: "ГБ",
+      unit: "%",
     },
   ];
 
   const recentActivity = [
     {
-      action: "Обновил проект",
-      project: "E-commerce Dashboard",
+      action: "Обновлена проектная декларация",
+      project: "ЖК Северный",
       time: "2 часа назад",
-      icon: "GitCommit",
-    },
-    {
-      action: "Создал документ",
-      project: "API Documentation",
-      time: "4 часа назад",
       icon: "FileText",
     },
     {
-      action: "Загрузил файлы",
-      project: "Assets Collection",
+      action: "Заключен договор ДДУ",
+      project: "Квартира 145, корпус А",
+      time: "4 часа назад",
+      icon: "FileSignature",
+    },
+    {
+      action: "Получено разрешение",
+      project: "ЖК Восточный",
       time: "Вчера",
-      icon: "Upload",
+      icon: "Shield",
+    },
+  ];
+
+  const companyData = [
+    { label: "ИНН", value: "7726123456" },
+    { label: "ОГРН", value: "1234567890123" },
+    { label: "КПП", value: "772601001" },
+    { label: "ОКВЭД", value: "41.20 - Строительство жилых и нежилых зданий" },
+    { label: "Юридический адрес", value: "г. Москва, ул. Строительная, д. 15" },
+    {
+      label: "Банковские реквизиты",
+      value: "р/с 40702810400000000001 в ПАО Сбербанк",
     },
   ];
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
       {/* Статистика данных */}
       <Card className="animate-fade-in">
         <CardHeader>
@@ -102,6 +114,30 @@ const UserDataSection = () => {
                   <p className="text-sm text-gray-500">{activity.project}</p>
                 </div>
                 <span className="text-xs text-gray-400">{activity.time}</span>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Данные компании */}
+      <Card className="animate-fade-in">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Icon name="Building" size={20} />
+            Данные компании
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            {companyData.map((data, index) => (
+              <div key={index} className="flex flex-col space-y-1">
+                <span className="text-sm font-medium text-gray-700">
+                  {data.label}
+                </span>
+                <span className="text-sm text-gray-900 bg-gray-50 p-2 rounded">
+                  {data.value}
+                </span>
               </div>
             ))}
           </div>

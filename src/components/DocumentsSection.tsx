@@ -6,45 +6,54 @@ import Icon from "@/components/ui/icon";
 const DocumentsSection = () => {
   const documents = [
     {
-      name: "Техническое задание.pdf",
-      size: "2.4 МБ",
+      name: "Свидетельство о государственной регистрации.pdf",
+      size: "1.2 МБ",
       modified: "Сегодня, 14:30",
-      type: "pdf",
+      type: "certificate",
       status: "active",
     },
     {
-      name: "Презентация проекта.pptx",
-      size: "5.1 МБ",
+      name: "Лицензия на строительство объекта.pdf",
+      size: "2.8 МБ",
       modified: "Вчера, 16:45",
-      type: "presentation",
+      type: "license",
+      status: "active",
+    },
+    {
+      name: "Разрешение на строительство ЖК Северный.pdf",
+      size: "3.1 МБ",
+      modified: "3 дня назад",
+      type: "permit",
+      status: "active",
+    },
+    {
+      name: "Проектная декларация.pdf",
+      size: "8.4 МБ",
+      modified: "Неделю назад",
+      type: "declaration",
       status: "shared",
     },
     {
-      name: "База данных пользователей.xlsx",
-      size: "1.8 МБ",
-      modified: "3 дня назад",
-      type: "spreadsheet",
-      status: "archived",
-    },
-    {
-      name: "Дизайн макеты.fig",
-      size: "12.3 МБ",
-      modified: "Неделю назад",
-      type: "design",
+      name: "Договор долевого участия - образец.docx",
+      size: "512 КБ",
+      modified: "2 недели назад",
+      type: "contract",
       status: "active",
     },
   ];
 
   const getFileIcon = (type: string) => {
     switch (type) {
-      case "pdf":
+      case "certificate":
+        return "Award";
+      case "license":
+        return "Shield";
+      case "permit":
+        return "FileCheck";
+      case "declaration":
         return "FileText";
-      case "presentation":
-        return "Presentation";
-      case "spreadsheet":
-        return "Sheet";
-      case "design":
-        return "Palette";
+      case "contract":
+        return "FileSignature";
       default:
         return "File";
     }
